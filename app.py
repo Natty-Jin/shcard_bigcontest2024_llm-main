@@ -150,8 +150,9 @@ def generate_response_with_faiss(
     reference_info = "\n".join(filtered_df["text"])
     
     # 시스템 메시지로 최대 토큰 수에 대한 힌트 추가
-    system_message = "Max Token은 5000으로 설정해주세요.\n"
-    prompt = f"{system_message}질문: {question} 특히 {local_choice}을 선호해\n참고할 정보:\n{reference_info}\n응답:"
+    # system_message = "Max Token은 5000으로 설정해주세요.\n"
+    # prompt = f"{system_message}질문: {question} 특히 {local_choice}을 선호해\n참고할 정보:\n{reference_info}\n응답:"
+    prompt = f"질문: {question} 특히 {local_choice}을 선호해\n참고할 정보:\n{reference_info}\n응답:"
 
     if print_prompt:
         print("-" * 90)
